@@ -47,6 +47,7 @@
 #' }
 gd_job_stats <- function(
   ...,
+  query = NULL,
   employer = NULL,
   location = NULL,
   city = NULL,
@@ -62,12 +63,14 @@ gd_job_stats <- function(
   returnStates = NULL,
   returnJobTitles = NULL,
   returnEmployers = NULL,
-  admLevelRequested = NULL,
-  query = NULL
-) {
+  admLevelRequested = NULL) {
 
   action = "jobs-stats"
   args = list(...)
+  if (!("version" %in% names(args))) {
+    args$version = "1.1"
+  }
+
   args$action = action
 
   if (!is.null(admLevelRequested)) {
@@ -130,7 +133,7 @@ gd_job_stats <- function(
     }
   }
 
-  args$query = qq
+  args$add_query = qq
 
   res = do.call("gd_api", args)
   class(res) = c(class(res), "gd_job_stats")
