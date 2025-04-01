@@ -10,7 +10,7 @@ vignette: >
 ---
 
 # Glassdoor API Keys
-In order to use the `glassdoor` package, you need an API key from Glassdoor (either https://www.glassdoor.com/developer/register_input.htm or click Get API key from  https://www.glassdoor.com/developer/index.htm).  
+In order to use the `glassdoor` package, you need an API key from [Glassdoor](https://www.glassdoor.com/developer/index.htm)
 
 After that is done, you need to set up the API keys.  The keys are grabbed using 
 ```{r, eval = FALSE}
@@ -43,7 +43,7 @@ res = gd_api(
 }
 ```
 
-The function used here is `gd_api` which is the workhorse function of the package.   Generally, however, you probably want to use `gd_job_stats`, `gd_job_prog`, or `gd_company`.
+The function used here is `gd_api` which is the workhorse function of the package.   Generally, however, you probably want to use `gd_job_stats` or `gd_company`.
 
 ## Job Statistics 
 
@@ -54,7 +54,7 @@ agent = gd_user_agent()
 
 If you would like to change this, simply specify the `agent` argument in the `glassdoor` functions.
 
-The job statistics specification can be found https://www.glassdoor.com/developer/jobsApiActions.htm#JobsStats. 
+The job statistics specification can be found https://www.glassdoor.com/developer/jobsApiActions.htm. 
 
 ```{r}
 if (have_gd_tokens()) {
@@ -64,20 +64,6 @@ if (have_gd_tokens()) {
     head(res$content$response$jobTitles, 3)
 }
 ```
-
-## Job Progression 
-
-The job statistics specification can be found https://www.glassdoor.com/developer/jobsApiActions.htm#JobProgression.
-
-```{r}
-job_name = "sales associate"
-if (have_gd_tokens()) {
-  res = gd_job_prog(
-    jobTitle = job_name)
-  head(res$content$response$results, 2)
-}
-```
-which gives the percentage of transitions to another profession after being a `r job_name`
 
 
 ## Employers

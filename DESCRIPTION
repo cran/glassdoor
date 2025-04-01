@@ -1,12 +1,11 @@
 Type: Package
 Package: glassdoor
 Title: Interface to 'Glassdoor' API
-Version: 0.8.1
+Version: 0.9.0
 Authors@R: person(given = "John",
            family = "Muschelli",
            role = c("aut", "cre"),
            email = "muschellij2@gmail.com")
-Maintainer: John Muschelli <muschellij2@gmail.com>
 Description: Interacts with the 'Glassdoor' API
     <https://www.glassdoor.com/developer/index.htm>. Allows the user to
     search job statistics, employer statistics, and job progression,
@@ -18,11 +17,11 @@ Imports: httr
 Suggests: covr, knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 Encoding: UTF-8
-LazyData: true
-RoxygenNote: 6.1.0
+RoxygenNote: 7.3.2
 Depends: R (>= 3.1)
 NeedsCompilation: no
-Packaged: 2018-11-21 16:51:06 UTC; johnmuschelli
+Packaged: 2025-04-01 18:12:28 UTC; johnmuschelli
 Author: John Muschelli [aut, cre]
+Maintainer: John Muschelli <muschellij2@gmail.com>
 Repository: CRAN
-Date/Publication: 2018-11-21 17:00:03 UTC
+Date/Publication: 2025-04-01 22:50:02 UTC
